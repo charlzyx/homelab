@@ -3,6 +3,7 @@
 ## Openwrt
 
 - https://supes.top/
+- https://github.com/kenzok8/openwrt-packages
 
 ## Reference
 
