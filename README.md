@@ -10,6 +10,11 @@
 - https://tailscale.com/kb/1019/subnets/
 - https://www.right.com.cn/forum/thread-8288573-1-1.html
 
+## Manual
+
+/www/luci-static/design/style/style.css
+[empty]
+
 ## Reference
 
 - https://zhuanlan.zhihu.com/p/541308924
