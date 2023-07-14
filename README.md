@@ -23,4 +23,6 @@
 
 # Prepare
 
+```bash
 opkg update && opkg install git-http
+```
