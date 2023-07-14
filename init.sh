@@ -3,6 +3,7 @@
 # echo 'net.ipv6.conf.all.forwarding = 1' | tee -a /etc/sysctl.d/99-tailscale.conf
 # sysctl -p /etc/sysctl.d/99-tailscale.conf
 echo "export LANG=zh_CN.UTF-8" >> /etc/profile && source /etc/profile
+service tailscale restart
 
 uci add network tailscale
 uci set network.tailscale=interface
@@ -38,3 +39,9 @@ uci commit firewall
 
 # -- /dev/dri
 chmod -R 766 /dev/dri
+
+# --- copy config
+cp ./config/alias.home.conf /etc/nginx/conf.d/
+cp ./config/.vimrc ~/.vimrc
+# ifwifi
+# cat ./config/wireless >> /etc/config/wireless
