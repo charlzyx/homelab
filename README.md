@@ -129,7 +129,7 @@ https://mirrors.tuna.tsinghua.edu.cn/proxmox/images/system/debian-11-standard_11
    ![Alt text](images/image-6.png)
    2.6 DNS 默认值 -> 下一步 -> 完成
 
-3. 配置 Debain 系统
+4. 配置 Debain 系统
    3.1 登录: 用户名 root, 密码就是刚才创建的时候填写的密码
    ![Alt text](images/image-7.png)
    3.2 第一步依然是更新 apt 源, 注意界面上的 Debain 版本要对应上 https://mirrors.tuna.tsinghua.edu.cn/help/debian/
@@ -170,6 +170,12 @@ https://mirrors.tuna.tsinghua.edu.cn/proxmox/images/system/debian-11-standard_11
 
    3.6 根据 [这里](https://github.com/mritd/tpclash/wiki/Clash-DNS-%E7%A7%91%E6%99%AE#%E5%9B%9B%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B) 的提示; 修改 /etc/systemd/resolve.conf, 添加下面 4 行进去
 
+   ```bash
+   # 开启ipv4 和 ipv6 转发
+   echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf && sysctl -p
+   echo "net.ipv6.conf.all.forwarding = 1" >> /etc/sysctl.conf && sysctl -p
+   ```
+   别忘了开启转发
    ```bash
     # /etc/systemd/resolve.conf
     DNS=223.5.5.5
